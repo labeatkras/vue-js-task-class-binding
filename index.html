@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Binding</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <section class="header__section">
+            <p class="header__task-name">💻 Coding Task</p>
+            <p class="header__bootcamp-info-wrapper">
+                <span class="header__bootcamp-modul"><strong>Modul:</strong> Web Apps with Vue.js - Part 1</span>
+                <a href="https://www.coding-bootcamps.eu/" class="header__bootcamp-link">coding-bootcamps.eu</a>
+            </p>
+        </section>
+    </header>
+    <main>
+        <div id="app" class="inside">
+            <nav>
+                <button :class="['btn', { 'btn-active': activeLetter === 'A' }, 'btn-a']"
+                    v-on:click="activeLetter = 'A'">A</button>
+                <button :class="['btn', { 'btn-active': activeLetter === 'B' }, 'btn-b']"
+                    v-on:click="activeLetter = 'B'">B</button>
+                <button :class="['btn', { 'btn-active': activeLetter === 'C' }, 'btn-c']"
+                    v-on:click="activeLetter = 'C'">C</button>
+            </nav>
+            <main>
+                <div :class="['letter', { 'letter-active': activeLetter === 'A' }, 'letter-a']">A</div>
+                <div :class="['letter', { 'letter-active': activeLetter === 'B' }, 'letter-b']">B</div>
+                <div :class="['letter', { 'letter-active': activeLetter === 'C' }, 'letter-c']">C</div>
+            </main>
+        </div>
+
+    </main>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
